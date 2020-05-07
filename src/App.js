@@ -1,39 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
 } from "react-router-dom";
-import Products from './Products';
-import Login from './Login';
+import Products from './routes/Products';
+import Login from './routes/Login';
+import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 
 function App() {
+  const [user, updateUser] = useState({});
+
   return (
     <Router>
-      <ProtectedRoute exact path="/" component={Products} />
-      <Route path="/login" component={Login} />
+      <ProtectedRoute
+        exact path="/"
+        component={Products}
+        user={user}
+        logoutUser={() => updateUser({})}
+      />
+      <Route
+        path="/login"
+        render={(props) => <Login {...props} loginUser={(user) => updateUser(user)} />}
+      />
     </Router>
   );
 }
 
 export default App;
-
-
-// Protected Route wrapper
-const ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={props =>
-        isAuthenticated === true ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{ pathname: "/login", state: { from: props.location } }}
-          />
-        )
-      }
-    />
-  );
-};
