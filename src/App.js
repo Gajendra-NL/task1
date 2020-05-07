@@ -9,11 +9,17 @@ import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 
 function App() {
-  const [user, updateUser] = useState({});
+  const [user, updateUser] = useState();
 
   return (
     <Router>
-      <ProtectedRoute
+      {/* <ProtectedRoute
+        exact path="/"
+        component={Products}
+        user={user}
+        logoutUser={() => updateUser({})}
+      /> */}
+      <Route
         exact path="/"
         component={Products}
         user={user}

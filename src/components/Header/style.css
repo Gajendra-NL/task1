@@ -1,0 +1,23 @@
+header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: large;
+    padding: 0 50px;
+    margin: 5px auto;
+}
+
+.btn {
+    width: 120px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 20px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 24px;
+    text-transform: uppercase;
+    border-radius: 4px;
+}

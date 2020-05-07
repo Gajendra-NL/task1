@@ -10,7 +10,7 @@ function Login({ loginUser, history }) {
     if (password.toLowerCase() === password) {
       alert('Please check your password');
     } else {
-      loginUser({ email });
+      loginUser(email);
       history.push('/');
     }
   }
@@ -35,7 +35,7 @@ function Login({ loginUser, history }) {
         placeholder="Your Password"
         required="required"
       />
-      <button type="submit">Login</button>
+      <button className='login-button' type="submit">Login</button>
      </form>
    </div>
   );

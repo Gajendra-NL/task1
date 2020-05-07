@@ -1,24 +1,6 @@
-:root {
-  --color1: #1b262c;
-  --color2: #0f4c75;
-  --color3: #3282b8;
-  --color4: #bbe1fa;
-  --color-white: #ffffff;
-}
-
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-}
-
-.header {
-  background-color: var(--color1);
-  height: 60px;
-  display: flex;
-  padding: 0 50px;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
 }
 

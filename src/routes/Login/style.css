@@ -24,7 +24,7 @@ input {
     background: transparent;
 }
 
-button {
+.login-button {
     width: 80%;
     padding: 15px 28px;
     color: #fff;
