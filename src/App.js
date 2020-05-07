@@ -13,17 +13,11 @@ function App() {
 
   return (
     <Router>
-      {/* <ProtectedRoute
+      <ProtectedRoute
         exact path="/"
         component={Products}
         user={user}
-        logoutUser={() => updateUser({})}
-      /> */}
-      <Route
-        exact path="/"
-        component={Products}
-        user={user}
-        logoutUser={() => updateUser({})}
+        logoutUser={() => updateUser()}
       />
       <Route
         path="/login"
